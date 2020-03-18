@@ -5,22 +5,6 @@ class Node():
         self.data = None
         self.next = None
 
-    # def set_data(self,data):
-    #     self._data = data
-
-    # def get_data(self):
-    #     return self._data
-
-    # def set_next(self, next):
-    #     self._next = next
-
-    # def get_next(self, next):
-    #     return self._next
-
-    # def has_next(self):
-    #     return self._next !=None 
-
-
 class LinkedList():
 
     def __init__(self):
@@ -38,11 +22,11 @@ class LinkedList():
         
         return count
 
-    def next(self):
-        return 1
+    # def next(self):
+    #     return 1
 
     def insert_at_begining(self,data):
-
+        print("insert_at_begining")
         if self.len() == 0:
             self.head = data
         else:
@@ -51,7 +35,7 @@ class LinkedList():
             self.head.next = old_node
 
     def insert_at_end(self, data):
-
+        print("insert_at_end")
         current = self.head
 
         while current.next != None:
@@ -63,16 +47,21 @@ class LinkedList():
 
         current = self.head
         
-        if 0 < pos > self.len():
+        if 0 > pos > self.len():
             return None
+        elif pos == 0:
+            print("calling in")
+            self.insert_at_begining(data)
+        elif pos == self.len():
+            self.insert_at_end(data)
+        else:
+            while pos > 0:
+                current = current.next
+                pos -=1
 
-        while pos > 0:
-            current = current.next
-            pos -=1
-
-        next = current.next 
-        data.next = next
-        current.next =data
+            next = current.next 
+            data.next = next
+            current.next =data
 
 
 
