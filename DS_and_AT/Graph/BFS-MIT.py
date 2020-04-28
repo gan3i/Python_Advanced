@@ -12,7 +12,7 @@ adj =  {"s":["a","x"],
 
 def bfs(s,adj):
     level = {s : 0}
-    parent = {s : None}
+    parent = {s : None}# gives the shortest path
     i = 1
     frontier = [s]
     while frontier:
