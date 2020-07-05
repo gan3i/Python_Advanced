@@ -46,17 +46,17 @@ class AdjucencyMatrixGraph(Graph):
             for v in self.get_adjucent_vertices(i):
                 print(i,"-->",v)
 
-adm_graph=  AdjucencyMatrixGraph(4)
-adm_graph.add_edge(0,1)
-adm_graph.add_edge(0,2)
-adm_graph.add_edge(2,3)
-for i in range(4):
-    print('Adjucent to :',i,adm_graph.get_adjucent_vertices(i))
-for i in range(4):
-    print('Indegree :',i,adm_graph.get_indegree(i))
-for i in range(4):
-    for j in adm_graph.get_adjucent_vertices(i):
-        print('Edge :',i,j," weight : " ,adm_graph.get_edge_weight(i,j))
+# adm_graph=  AdjucencyMatrixGraph(4)
+# adm_graph.add_edge(0,1)
+# adm_graph.add_edge(0,2)
+# adm_graph.add_edge(2,3)
+# for i in range(4):
+#     print('Adjucent to :',i,adm_graph.get_adjucent_vertices(i))
+# for i in range(4):
+#     print('Indegree :',i,adm_graph.get_indegree(i))
+# for i in range(4):
+#     for j in adm_graph.get_adjucent_vertices(i):
+#         print('Edge :',i,j," weight : " ,adm_graph.get_edge_weight(i,j))
 
-adm_graph.display()
+# adm_graph.display()
          
