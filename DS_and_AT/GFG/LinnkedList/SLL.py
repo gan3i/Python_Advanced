@@ -29,6 +29,16 @@ class SLL():
             new_head.next  = self.head
             self.head = new_head
         self.length +=1
+#TODO insert after a node
+#TODO insert after a value
+#TODO insert at Position
+#TODO insert afrer a Position
+#TODO delete at begining 
+#TODO delete at end 
+#TODO delete after a node
+# TODO delete after a value 
+# TODO delete after a position
+# TODO delete at  position
 
 def findMid_m1(head):
     if head is None:
@@ -68,7 +78,8 @@ def findMid_m3(head):
 
     return mid.data
 
-
+def binarysearch(head, value):
+    pass
 
 
 
