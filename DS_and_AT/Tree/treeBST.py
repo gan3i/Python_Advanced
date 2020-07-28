@@ -76,6 +76,7 @@ class BST():
             current = current.left
 
         return current
+    
     @staticmethod
     def getInOrderPredecessor(root):
         if root is None:
@@ -149,6 +150,46 @@ class BST():
                 successor = None   
             # return root
         return root
+    @staticmethod
+    def getMin(root):
+        if root is None:
+            return root
+        current = root
+        while current.left:
+            current = current.left
+
+        return current.data
+    @staticmethod
+    def getMax(root):
+        if root is None:
+            return root
+        current = root
+        while current.right:
+            current = current.right
+
+        return current.data
+    @staticmethod
+    def checkIsBST(root):
+        if root is None:
+            return 1
+
+        if (root.left is not None and root.data< BST.getMin(root.left)) or (root.right is not None and  root.data> BST.getMax(root.right)):
+            return 0
+        
+        if (not BST.checkIsBST(root.right) and not BST.checkIsBST(root.lest)):
+            return 0
+
+        return 1
+    @staticmethod
+    def checkIsBST2(root,prev):
+        if root == None:
+            return True
+        if not BST.checkIsBST2(root.left, prev):
+            return False
+        if prev != None and prev.data > root.data:
+            return False
+        prev = root
+        return BST.checkIsBST2(root.right, prev)
 
     def getNodeByKey2_itiration(self, key):
         current= self.root
@@ -184,35 +225,34 @@ class BST():
 
     def print_inOrder(self):
         BST.inOrder(self.root)
-
+    
     def deleteNodeByKey(self, key):
         return BST.delete2(self.root, key)
-    def minValue(self):
-        if self.root is None:
-            return self.root
-        current = self.root
-        while current.left:
-            current = current.left
-        return current.data
-    def maxValue(self):
-        if self.root is None:
-            return self.root
-        current = self.root.right
-        while current.right:
-            current = current.right
-
-        return current.data
     
+    def minValue(self):
+        return BST.getMin(self.root)
+    
+    def maxValue(self):
+        return BST.getMax(self.root)
+   
     def successor(self,key):
         Node = BST.getNodeByKey_recursion(self.root,key)
         if not Node:
             return Node
         return BST.getInOrderSuccessor(Node.right)
+    
     def predecessor(self,key):
         Node = BST.getNodeByKey_recursion(self.root,key)
         if not Node:
             return Node
         return BST.getInOrderPredecessor(Node.left)
+
+    def isBST(self):
+    #    return BST.checkIsBST(self.root)
+        prev = None
+        return BST.checkIsBST2(self.root,prev)
+
+
 bst = BST(six)
 # print(BST.getNodeByKey_recursion(bst.root,5).data)
 # print(bst.getNodeByKey2_itiration(11).data)
@@ -229,7 +269,9 @@ bst = BST(six)
 # bst.print_inOrder()
 # print(bst.minValue())
 # print(bst.maxValue())
-print(bst.successor(1))
-print(bst.predecessor(6).data)
+# print(bst.successor(1))
+# print(bst.predecessor(6).data)
+
+# print(bst.isBST())
 
 
