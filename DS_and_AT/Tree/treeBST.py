@@ -27,10 +27,20 @@ seven = Node(7)
 nine =  Node(9)
 eight.left = seven
 eight.right = nine
+
+
+
+
+
+
+
+import math
+# prev = -math.inf
 # left <= root < right
 class BST():
     def __init__(self,root=None):
         self.root = root
+    prev = -math.inf
 
     @staticmethod 
     def getNodeByKey_recursion(root, key):
@@ -181,15 +191,24 @@ class BST():
 
         return 1
     @staticmethod
-    def checkIsBST2(root,prev):
+    def checkIsBST2(root):
+        global prev
         if root == None:
             return True
-        if not BST.checkIsBST2(root.left, prev):
+        if not BST.checkIsBST2(root.left):
             return False
-        if prev != None and prev.data > root.data:
+        if prev > root.data:
             return False
-        prev = root
-        return BST.checkIsBST2(root.right, prev)
+        prev = root.data
+        return BST.checkIsBST2(root.right)
+
+    @staticmethod
+    def getHeight(root):
+        if root== None:
+            return 0
+        lheight = BST.getHeight(root.left)
+        rheight = BST.getHeight(root.right)
+        return max(lheight, rheight)+1 
 
     def getNodeByKey2_itiration(self, key):
         current= self.root
@@ -249,10 +268,10 @@ class BST():
 
     def isBST(self):
     #    return BST.checkIsBST(self.root)
-        prev = None
-        return BST.checkIsBST2(self.root,prev)
-
-
+        return BST.checkIsBST2(self.root)
+    
+    def height(self):
+        return BST.getHeight(self.root)
 bst = BST(six)
 # print(BST.getNodeByKey_recursion(bst.root,5).data)
 # print(bst.getNodeByKey2_itiration(11).data)
@@ -272,6 +291,7 @@ bst = BST(six)
 # print(bst.successor(1))
 # print(bst.predecessor(6).data)
 
-# print(bst.isBST())
+print(bst.isBST())
+# print(bst.height())
 
 
