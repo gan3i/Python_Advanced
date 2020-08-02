@@ -35,7 +35,7 @@ eight.right = nine
 
 
 import math
-# prev = -math.inf
+prev = -math.inf
 # left <= root < right
 class BST():
     def __init__(self,root=None):
