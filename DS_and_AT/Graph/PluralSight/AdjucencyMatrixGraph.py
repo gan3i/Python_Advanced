@@ -46,7 +46,7 @@ class AdjucencyMatrixGraph(Graph):
             for v in self.get_adjucent_vertices(i):
                 print(i,"-->",v)
 
-# adm_graph=  AdjucencyMatrixGraph(4)
+# adm_graph=  AdjucencyMatrixGraph(4,False)# make it True for directed graph
 # adm_graph.add_edge(0,1)
 # adm_graph.add_edge(0,2)
 # adm_graph.add_edge(2,3)
