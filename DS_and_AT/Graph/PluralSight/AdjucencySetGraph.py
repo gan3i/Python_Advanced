@@ -43,7 +43,7 @@ class AdjucencySetGraph(Graph):
     def display(self):
         for i in range(self.numVertices):
             for v in self.get_adjucent_vertices(i):
-                print(i,"-->",v)
+                print(i,"-->",v) 
 
 # adm_graph=  AdjucencySetGraph(4)
 # adm_graph.add_edge(0,1)
