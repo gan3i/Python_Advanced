@@ -1,7 +1,7 @@
 from AdjucencyMatrixGraph import AdjucencyMatrixGraph
 from queue import Queue
 
-graph = AdjucencyMatrixGraph(7,False)
+graph = AdjucencyMatrixGraph(7,True)
 
 graph.add_edge(0,1,2)
 graph.add_edge(0,2,4)
@@ -14,11 +14,6 @@ graph.add_edge(5,6,1)
 
 # graph.display()
 
-# def shortest_path(graph,start,end):
-#     distace_table = {x:(None,None) for x in range(graph.numVertices)}
-#     for key,value in distace_table.items():
-#         print(key,value)
-#         if distace_table[current][0] is not None:
 
 def build_distanec_table(graph,start):
     distance_table = {x : (None,None) for x in range(graph.numVertices)}
@@ -31,15 +26,16 @@ def build_distanec_table(graph,start):
         for adj in graph.get_adjucent_vertices(current):
             new_dist = curent_distance + graph.get_edge_weight(current,adj)
             
-            if distance_table[adj][0] is not None :
+            if distance_table[adj][0]!= None :
                 if new_dist < distance_table[adj][0] :
                     distance_table[adj] = (new_dist,current)
                     q.put(adj)
-                    distance_table[adj] = new_dist
+                    # distance_table[adj] = new_dist
                 else:
                     continue
-            distance_table[adj] = (new_dist,current)
-            q.put(adj)
+            else:
+                distance_table[adj] = (new_dist,current)
+                q.put(adj)
     return distance_table
 
 
