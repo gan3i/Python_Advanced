@@ -1,5 +1,7 @@
 from collections import defaultdict
 
+#usinf disjointset
+# naive union and find
 
 class Graph():
     def __init__(self,vertices):
@@ -11,6 +13,8 @@ class Graph():
 
     def isCyclic(self):
 
+        # [0,1,2,3,4]
+        # [-1,-1,-1,-1,-1]
         subset = [-1] * self.vertices
 
         for i in self.graph:
@@ -44,7 +48,7 @@ g.addEdge(0,4)
 g.addEdge(2,6)
 g.addEdge(2,5)
 g.addEdge(3,7)
-# g.addEdge(3,1)
+g.addEdge(3,4)
 g.addEdge(7,8)
 g.addEdge(7,9)
 
