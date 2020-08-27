@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-# worked for disconnected graph as well
+# works for disconnected graph as well
 #TODO try the same problem with colors
 class Graph():
     def __init__(self,vertices):
