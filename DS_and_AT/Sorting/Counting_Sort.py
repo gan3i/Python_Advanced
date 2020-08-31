@@ -5,7 +5,7 @@
 def countSort(arr): 
 
 	# The output character array that will have sorted arr 
-	output = [0 for i in range(256)] 
+	output = [0 for i in range(len(arr))] 
 
 	# Create a count array to store count of inidividul 
 	# characters and initialize count array as 0 
@@ -33,11 +33,11 @@ def countSort(arr):
 	# contains sorted characters 
 	for i in range(len(arr)): 
 		ans[i] = output[i] 
-	return ans 
+	return ''.join(ans) 
 
 # Driver program to test above function 
 arr = "geeksforgeeks"
 ans = countSort(arr) 
-print("Sorted character array is %s" %("".join(ans))) 
+print(ans) 
 
 # This code is contributed by Nikhil Kumar Singh 
