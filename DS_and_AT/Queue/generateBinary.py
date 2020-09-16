@@ -33,4 +33,3 @@ def generatePrintBinary(n):
 n = 10
 generatePrintBinary(n) 
 
-# This code is contributed by Nikhil Kumar Singh(nickzuck_007) 
