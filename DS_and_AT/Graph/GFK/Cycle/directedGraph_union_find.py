@@ -23,7 +23,7 @@ class Graph():
                 y = self.find_parent(subset, j)
                 if x== y :
                     return True
-                subset[x] = y 
+                self.union(subset,x,y) 
 
         return False
     def find_parent(self, subset,i):
@@ -47,8 +47,9 @@ g.addEdge(0,4)
 # g.addEdge(0,5)
 g.addEdge(2,6)
 g.addEdge(2,5)
+# g.addEdge(2,3)
 g.addEdge(3,7)
-g.addEdge(3,4)
+# g.addEdge(3,4)
 g.addEdge(7,8)
 g.addEdge(7,9)
 
