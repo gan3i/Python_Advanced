@@ -35,8 +35,11 @@ def infix_to_postfix(expr):
 
 
 
-# infix_to_postfix("a+b*(c^d-e)^(f+g*h)-i")
-# infix_to_postfix("2+(3*(4+5)+6)")
+infix_to_postfix("a+b*(c^d-e)^(f+g*h)-i")
+
+'a b c d ^ e - f g h * + ^ * + i -'
+
+infix_to_postfix("2+(3*(4+5)+6)")
 
 
 
