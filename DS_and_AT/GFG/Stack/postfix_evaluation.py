@@ -18,4 +18,7 @@ def postfix_evaluation(expr):
 
     print(stack.pop())
 
+
+'ab45+*6++'
+
 postfix_evaluation(infix_to_postfix("a+(b*(4+5)+6)"))
