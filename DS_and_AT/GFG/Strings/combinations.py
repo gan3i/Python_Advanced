@@ -4,7 +4,7 @@
 
 def combinations(nums, i ,results, path):
 
-    if i ==len(nums):
+    if i ==2:
         results.append(path)
         return
     
@@ -13,8 +13,8 @@ def combinations(nums, i ,results, path):
         curr_path.append(path[j])
     curr_path.append(nums[i])
 
-    combinations(nums,i+1,results,path)
-    combinations(nums, i+1, results, curr_path)
+    combinations(nums,i+1,results,path) # path without current elememt
+    combinations(nums, i+1, results, curr_path) # with Current element
 
 s = 'ABC'
 
