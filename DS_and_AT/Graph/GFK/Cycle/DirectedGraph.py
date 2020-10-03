@@ -9,6 +9,7 @@ class Graph():
 
     def addEdge(self, u,v):
         self.graph[u].append(v)
+        self.graph[v].append(u)
 
     def isCyclic(self):
         visited = [False] * self.vertices
@@ -36,18 +37,18 @@ class Graph():
 
 g = Graph(10)
 g.addEdge(0, 1) 
-g.addEdge(0, 2) 
-g.addEdge(1, 2) 
-g.addEdge(1, 3) 
-g.addEdge(1, 6) 
-g.addEdge(2, 5) 
-g.addEdge(2, 3) 
-g.addEdge(3, 4) 
-g.addEdge(3, 7) 
-g.addEdge(3, 6) 
-g.addEdge(5, 3) 
-g.addEdge(5, 4) 
-g.addEdge(6, 7) 
+# g.addEdge(0, 2) 
+# g.addEdge(1, 2) 
+# g.addEdge(1, 3) 
+# g.addEdge(1, 6) 
+# g.addEdge(2, 5) 
+# g.addEdge(2, 3) 
+# g.addEdge(3, 4) 
+# g.addEdge(3, 7) 
+# g.addEdge(3, 6) 
+# g.addEdge(5, 3) 
+# g.addEdge(5, 4) 
+# g.addEdge(6, 7) 
 # g.addEdge(6, 1) 
 
 # disconnected graph
