@@ -50,14 +50,23 @@ class PriorityQueue:
     def find(self, key):
     	return key in self.map
 
+    def get_priority(self, key):
+        if self.find(key):
+            return self.heap[self.map[key]][0]
+
 
     def extract_min(self):
-    	min_value = self.heap[0]
-    	self.heap[0] = self.heap.pop()
-    	self._heapify_down(0)
-    	return min_value
+        if self.size() ==1:
+            del self.map[self.heap[0][1]]
+            return self.heap.pop()[1]
+        min_value = self.heap[0]
+        self.heap[0] = self.heap.pop()
+        del self.map[min_value[1]]
+        self.map[self.heap[0][1]] = 0
+        self._heapify_down(0)
+        return min_value[1]
 
-    def update(self, key, value):
+    def update_priority(self, key, value):
         if key in self.map:
             index = self.map[key]
             self.heap[index] = [value, key]
@@ -67,17 +76,17 @@ class PriorityQueue:
             else:
                 self._heapify_down(index)
 
-pq = PriorityQueue()
+# pq = PriorityQueue()
 
-pq.insert('A',10)
-pq.insert('B',8)
-pq.insert('C',11)
-pq.insert('D',2)
-pq.insert('E',7)
+# pq.insert('A',10)
+# pq.insert('B',8)
+# pq.insert('C',11)
+# pq.insert('D',2)
+# pq.insert('E',7)
 
-print(pq.extract_min())
+# print(pq.extract_min())
 
-pq.update('C', 1)
-print(pq.extract_min())
+# pq.update_priority('C', 1)
+# print(pq.extract_min())
 
-print(pq.heap)
+# print(pq.heap)
