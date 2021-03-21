@@ -19,12 +19,7 @@ def get_min_steps(n):
 
 from queue import Queue
 def get_min_steps_bm(n):
-    if n == 1:
-        return 0
-    if n <=3 :
-        return 1
-    a = Queue()
-    steps_dp = [a] * (n+1) #[0,0,1,1,2,3,2,3]
+    steps_dp = [0] * (n+1) #[0,0,1,1,2,3,2,3]
     steps_dp[2] = 1
     steps_dp[3] = 1
 
