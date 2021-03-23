@@ -32,7 +32,7 @@ def get_min_steps_bm(n):
         steps_dp[curr] = steps
     return steps_dp[n]
 
-# for i in range(1, 100):
+# for i in range(1, 100)
 print(get_min_steps_bm(10000000))
     # rec =  get_min_steps(i)
     # if  dp!=rec:
