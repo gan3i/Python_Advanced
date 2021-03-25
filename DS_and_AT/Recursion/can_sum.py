@@ -23,7 +23,7 @@ def can_sum_dp(arr, target):
     if not arr:
         return False
     n = len(arr)
-    dp = [[False] * (target + 1) for _ in range(n)]
+    dp = [[False] * (target + 1) for _ in range(n)] # whether the first column should be True or not 
 
     for row in range(n):
         for col in range(1, target+1):
@@ -47,4 +47,4 @@ def can_sum_dp(arr, target):
 2[False, False, False, False, False, False]3
 
 '''
-print(can_sum_dp([4, 3, 2, 7, 8, 15], 4 ))
+print(can_sum_dp([4, 3, 2, 7, 8, 15], 12 ))
