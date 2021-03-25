@@ -19,4 +19,32 @@ def can_sum_helper(arr, target, curr_pos, memo):
     memo[curr_pos][target] = result
     return memo[curr_pos][target]
 
-print(can_sum([4, 3, 2, 7, 10, 15], 23))
+def can_sum_dp(arr, target):
+    if not arr:
+        return False
+    n = len(arr)
+    dp = [[False] * (target + 1) for _ in range(n)]
+
+    for row in range(n):
+        for col in range(1, target+1):
+            if row == 0:
+                dp[row][col] =  arr[row] == col
+            else:
+                if arr[row] == col:
+                    dp[row][col] = True
+                if arr[row] > col:
+                    dp[row][col] = dp[row-1][col]
+                else:
+                    dp[row][col] = dp[row - 1][col] or dp[row-1][col - arr[row]]
+
+    return dp[n-1][target]
+
+'''
+    0     1       2    3       4       5
+1[False, False, False, False, False, False]0
+3[False, False, False, False, False, False]1
+4[False, False, False, False, False, False]2
+2[False, False, False, False, False, False]3
+
+'''
+print(can_sum_dp([4, 3, 2, 7, 8, 15], 4 ))
