@@ -59,3 +59,11 @@ W = 4
 values = [1,2,3]
 weight = [4,5,1]
 print(knapSack_dp(W, weight, values, N))
+
+
+'''
+0 0 0 0 
+0 0 0 0
+0 0 0 0
+0 0 0 0
+'''

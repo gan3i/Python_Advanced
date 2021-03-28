@@ -31,7 +31,7 @@ def merge_sort(nums):
 
 nums  = [35,10,4,5,40,2,1,3,3]
 print(nums)
-merge_sort(nums)
+merge_sort( )
 print(nums)
 
 
