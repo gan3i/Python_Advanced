@@ -1,9 +1,4 @@
 
-
-
-
-
-
 #fuck you missed the i increment last time
 def myAtoi(s: str) -> int:
         

@@ -3,7 +3,7 @@ t = 1
 for case in range(1,t+1):
     n,k =(3,1)
     ses = [100 ,200 ,230]
- added = 0
+    added = 0
     while added < k:
         maxd = 1
         maxi = -1
